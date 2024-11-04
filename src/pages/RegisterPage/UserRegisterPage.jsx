@@ -386,7 +386,7 @@ const UserRegisterPage = () => {
     newToggleStates[index] = !newToggleStates[index]; 
     setToggleStates(newToggleStates);
   };
- 
+
   return (
     <ScrollableContainer>
       <Container>

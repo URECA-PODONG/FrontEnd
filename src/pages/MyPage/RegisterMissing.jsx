@@ -15,14 +15,6 @@ const Container = styled.div`
   flex-direction: column;
 `; 
 
-const SubContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 5%;
-`; 
-
 const MapContainer = styled.div`
   width: 100%;
   height: 250px;
@@ -144,7 +136,7 @@ const RegisterButton = styled.button`
   text-align: center; 
   border-radius: 8px; 
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 
   &:hover {
     background-color: #FF6E00;
@@ -256,11 +248,10 @@ const RegisterMissing = () => {
         }
       });
     });
-  
-    // 초기 위치의 주소 가져오기
+
     searchAddrFromCoords(new window.kakao.maps.LatLng(latitude, longitude), function(result, status) {
       if (status === window.kakao.maps.services.Status.OK) {
-        const addr = result[0].road_address ? result[0].road_address.address_name : result[0].address.address_name;
+        const addr = result[0].road_adㅊdress ? result[0].road_address.address_name : result[0].address.address_name;
         setLocationInput(`${addr}`);
       }
     });
@@ -330,6 +321,7 @@ const RegisterMissing = () => {
     setPhone(formattedValue); 
   };
 
+  
   return (
     <ScrollableContainer>
       <Container>
